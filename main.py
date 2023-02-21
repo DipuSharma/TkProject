@@ -51,7 +51,7 @@ class LoginForm:
                                     font=('Time New Roman', 12, 'bold'), fg='#4f4e4d')
         self.username_label.place(x=550, y=200, height=20)
         self.username_entry = Entry(self.login_frame, highlightthickness=0, relief=FLAT, bg='#040405', fg='white',
-                                    font=('Time New Roman', 12, 'bold'))
+                                    font=('Time New Roman', 12, 'italic'))
         self.username_entry.place(x=580, y=230, width=270, height=20)
         self.username_line = Canvas(self.login_frame, width=300, height=2.0, bg='#bdb9b1', highlightthickness=0)
         self.username_line.place(x=550, y=260)
@@ -67,7 +67,7 @@ class LoginForm:
                                     font=('Time New Roman', 12, 'bold'), fg='#4f4e4d')
         self.password_label.place(x=550, y=280)
         self.password_entry = Entry(self.login_frame, highlightthickness=0, relief=FLAT, bg='#040405', fg='white',
-                                    font=('Time New Roman', 12, 'bold'))
+                                    font=('Time New Roman', 12, 'italic'))
         self.password_entry.place(x=580, y=310, width=270, height=20)
 
         self.password_line = Canvas(self.login_frame, width=300, height=2.0, bg='#bdb9b1', highlightthickness=0)
@@ -87,16 +87,36 @@ class LoginForm:
         self.login_button_label.image = photo
         self.login_button_label.place(x=550, y=380)
 
-        self.login = Button(self.login_button_label, text='Login', font=('Time New Roman', 12, 'bold'), width=15,
-                            bg='#3047ff', cursor='hand2', activebackground='#3047ff', fg='white', borderwidth='0',
-                            border='0', bd='0')
+        self.login = Button(self.login_button_label,
+                            text='Login',
+                            font=('Time New Roman', 12, 'bold'),
+                            width=15,
+                            bg='#3047ff',
+                            cursor='hand2',
+                            activebackground='#3047ff',
+                            fg='white',
+                            bd=0,
+                            highlightthickness=0,
+                            highlightcolor="white",
+                            highlightbackground="white",
+                            borderwidth=0)
         self.login.place(x=60, y=12)
 
         """------------------------------Forgot Password---------------------------------"""
-        self.forgot_password = Button(self.login_frame, text='Forgot Password ?', font=('arial', 10, 'underline'),
-                                      fg='white', width=25, bd=0, bg='#040404',
-                                      activebackground='green', cursor='hand2', border='0')
-        self.forgot_password.place(x=630, y=450)
+        self.forgot_password = Button(self.login_frame,
+                                      text='Forgot Password ?',
+                                      font=('arial', 10, 'underline'),
+                                      fg='white',
+                                      width=25,
+                                      cursor='hand2',
+                                      bg='#040405',
+                                      activebackground='#040405',
+                                      activeforeground='green',
+                                      bd=0,
+                                      highlightthickness=0,
+                                      borderwidth=0
+                                      )
+        self.forgot_password.place(x=680, y=440)
         # ========= show/hide password ==================================================================
         self.show_image = ImageTk.PhotoImage(file='images/show.png')
 
@@ -104,32 +124,40 @@ class LoginForm:
 
         self.show_button = Button(self.login_frame, image=self.show_image, command=self.show, relief=FLAT,
                                   activebackground="white"
-                                  , borderwidth=0, background="white", cursor="hand2")
+                                  , borderwidth=0, background="white", cursor="hand2", bd=0)
         self.show_button.image = self.show_image
         self.show_button.place(x=860, y=310)
 
         """---------------------------Sign Up-------------------------------------------"""
-        self.sign_label = Label(self.login_frame, text='No account yet?', font=("yu gothic ui", 11, "bold"),
+        self.sign_label = Label(self.login_frame, text='No account yet?', font=("yu gothic ui", 12, "bold"),
                                 relief=FLAT, borderwidth=0, background="#040405", fg='white')
         self.sign_label.place(x=550, y=500)
 
         photo = ImageTk.PhotoImage(file='images/register.png', size=15)
-        self.signup_button_label = Button(self.login_frame, image=photo, bg='#98a65d', cursor="hand2",
-                                          borderwidth=0, background="#040405", activebackground="#040405")
+        self.signup_button_label = Button(self.login_frame,
+                                          image=photo,
+                                          bg='#98a65d',
+                                          cursor="hand2",
+                                          borderwidth=0,
+                                          background="#040405",
+                                          activebackground="#040405",
+                                          highlightthickness=0,
+                                          highlightcolor="white",
+                                          highlightbackground="white")
         self.signup_button_label.image = photo
-        self.signup_button_label.place(x=700, y=500, width=120, height=30)
+        self.signup_button_label.place(x=720, y=490, width=120, height=30)
 
     def show(self):
         self.hide_button = Button(self.login_frame, image=self.hide_image, command=self.hide, relief=FLAT,
                                   activebackground="white"
-                                  , borderwidth=0, background="white", cursor="hand2")
+                                  , borderwidth=0, background="white", cursor="hand2", bd=0)
         self.hide_button.place(x=860, y=310)
         self.password_entry.config(show='')
 
     def hide(self):
         self.show_button = Button(self.login_frame, image=self.show_image, command=self.show, relief=FLAT,
                                   activebackground="white"
-                                  , borderwidth=0, background="white", cursor="hand2")
+                                  , borderwidth=0, background="white", cursor="hand2", bd=0)
         self.show_button.place(x=860, y=310)
         self.password_entry.config(show='*')
 
