@@ -1,3 +1,4 @@
-# TkProject
+# Tkinter Project
+In this project is crude operation using tkinter lib of python 
 
-![Screenshot from 2023-02-21 14-48-29](https://user-images.githubusercontent.com/33049521/220301999-67c14e4d-a73f-4c65-b439-4b339e63fae4.png)
+![Screenshot from 2023-02-21 19-47-37](https://user-images.githubusercontent.com/33049521/220369960-87df4a4e-161d-4017-a334-8e0faec2c799.png)
