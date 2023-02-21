@@ -7,9 +7,6 @@ class LoginForm:
         self.window = window
         self.window.title('Login Page')
         self.window.geometry('1368x768')
-        self.window.resizable(0, 0)
-        # self.window.attributes('-zoomed', True)
-        self.window.state('iconic')
 
         """__________________Background Image___________________________"""
         self.bg_frame = Image.open('images/background1.png')
